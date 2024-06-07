@@ -53,29 +53,29 @@ class CSVReader(FileReader):
             logging.error(f"Error reading CSV file: {e}")
             return "Error reading CSV file"
 
-# class DOCXReader(FileReader):
-#     def read(self, file_path):
-#         try:
-#             doc = Document(file_path)
-#             content = ""
-#             for paragraph in doc.paragraphs:
-#                 content += paragraph.text + "\n"
-#             logging.info("DOCX file read successfully")
-#             return content
-#         except Exception as e:
-#             logging.error(f"Error reading DOCX file: {e}")
-#             return "Error reading DOCX file"
-# either docx or pyandoc can be used;
-# class DOCXReader(FileReader):
-#     def read(self, file_path):
-#         try:
+class DOCXReader(FileReader):
+    def read(self, file_path):
+        try:
+            doc = Document(file_path)
+            content = ""
+            for paragraph in doc.paragraphs:
+                content += paragraph.text + "\n"
+            logging.info("DOCX file read successfully")
+            return content
+        except Exception as e:
+            logging.error(f"Error reading DOCX file: {e}")
+            return "Error reading DOCX file"
+either docx or pyandoc can be used;
+class DOCXReader(FileReader):
+    def read(self, file_path):
+        try:
            
-#             content = pypandoc.convert_file(file_path, 'plain', format='docx')
-#             logging.info("DOCX file read successfully")
-#             return content
-#         except Exception as e:
-#             logging.error(f"Error reading DOCX file: {e}")
-#             return "Error reading DOCX file"
+            content = pypandoc.convert_file(file_path, 'plain', format='docx')
+            logging.info("DOCX file read successfully")
+            return content
+        except Exception as e:
+            logging.error(f"Error reading DOCX file: {e}")
+            return "Error reading DOCX file"
 class TXTReader(FileReader):
     def read(self, file_path):
         try:
