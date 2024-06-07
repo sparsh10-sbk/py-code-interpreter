@@ -25,4 +25,4 @@ The generated Python code will be displayed in the terminal.
 - Generate Python code from a PDF file:
 
 - Generate Python code from an XLSX file:
-etc..
+- etc..
